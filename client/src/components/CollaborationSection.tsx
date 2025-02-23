@@ -1,49 +1,24 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Cpu, MessageSquare, Phone, Cloud, Users, LineChart, Zap, Globe } from "lucide-react";
 
 export default function CollaborationSection() {
-  const features = [
+  const vrTourismFeatures = [
     {
-      icon: MessageSquare,
-      title: "WhatsApp Chatbot & Toll-Free",
-      description: "Multi-language support for service requests via WhatsApp and phone calls",
+      title: "Immersive VR Experience",
+      description: "Revolutionary virtual reality technology for realistic tourism experiences",
     },
     {
-      icon: Users,
-      title: "Equipment & Labor Booking",
-      description: "Easy booking system for farm equipment and skilled labor",
+      title: "Global Destinations",
+      description: "Access to worldwide tourist spots from the comfort of home",
     },
     {
-      icon: Cpu,
-      title: "AI-Powered Advisory",
-      description: "Smart recommendations for optimal farming practices",
+      title: "Interactive Tours",
+      description: "Engaging virtual guided tours with rich cultural information",
     },
     {
-      icon: LineChart,
-      title: "Market Price Tracking",
-      description: "Real-time agricultural market price updates",
-    },
-    {
-      icon: Cloud,
-      title: "Weather Integration",
-      description: "Accurate weather forecasts for better planning",
-    },
-    {
-      icon: Globe,
-      title: "Multi-Language Support",
-      description: "Access in various regional languages",
-    },
-    {
-      icon: Zap,
-      title: "Modern Tech Stack",
-      description: "Built with Python, FastAPI, Make.com, and BotPress",
-    },
-    {
-      icon: Phone,
-      title: "24/7 Accessibility",
-      description: "Always available through WhatsApp and toll-free number",
+      title: "Multi-Platform Support",
+      description: "Compatible with various VR devices and platforms",
     },
   ];
 
@@ -59,14 +34,14 @@ export default function CollaborationSection() {
         >
           <h2 className="text-3xl font-bold mb-4">Collaboration Opportunity</h2>
           <p className="text-lg text-foreground/80 mb-6">
-            Join me in developing a revolutionary Farm Service Platform for Indian farmers
+            Join me in developing an innovative VR-based tourism platform
           </p>
           <Button
             size="lg"
             className="bg-primary hover:bg-primary/90"
             asChild
           >
-            <a href="#contact">Collaborate With Me</a>
+            <a href="#contact">Let's Collaborate</a>
           </Button>
         </motion.div>
 
@@ -80,18 +55,16 @@ export default function CollaborationSection() {
           <Card>
             <CardContent className="p-6">
               <p className="text-foreground/80">
-                A comprehensive Farm Service Providing Platform designed for Indian farmers,
-                offering essential agricultural services through a WhatsApp chatbot and
-                toll-free number. The platform streamlines farm-related services, including
-                equipment booking, labor hiring, government scheme access, and real-time
-                weather updates.
+                A revolutionary VR-based tourism platform that makes travel experiences accessible
+                and immersive. Using cutting-edge virtual reality technology, we aim to transform
+                how people explore and experience destinations worldwide.
               </p>
             </CardContent>
           </Card>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          {vrTourismFeatures.map((feature, index) => (
             <motion.div
               key={feature.title}
               initial={{ opacity: 0, y: 20 }}
@@ -100,8 +73,7 @@ export default function CollaborationSection() {
               viewport={{ once: true }}
             >
               <Card className="h-full">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <feature.icon className="w-12 h-12 mb-4 text-primary" />
+                <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
                   <p className="text-foreground/80">{feature.description}</p>
                 </CardContent>

@@ -7,45 +7,68 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { MessageSquare, Phone, Cloud, Users, LineChart, Zap, Globe, Cpu } from "lucide-react";
 
 export default function StartupSection() {
   const milestones = [
     {
-      year: "2023",
-      title: "VR Tourism Platform Launch",
-      description: "Successfully launched our innovative VR-based tourism platform",
-    },
-    {
-      year: "2023",
-      title: "First Major Partnership",
-      description: "Partnered with leading tourism operators",
+      year: "2024",
+      title: "Platform Launch",
+      description: "Successfully launched the Farm Service Platform with WhatsApp integration",
     },
     {
       year: "2024",
-      title: "Market Expansion",
-      description: "Expanded operations to multiple cities",
+      title: "Regional Expansion",
+      description: "Extended services to multiple states with local language support",
+    },
+    {
+      year: "2024",
+      title: "Tech Integration",
+      description: "Implemented AI-powered crop advisory and weather forecasting",
     },
   ];
 
-  const coFounders = [
+  const features = [
     {
-      name: "Raj Kumar",
-      role: "CTO",
-      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
-      expertise: "VR Technology & Software Architecture",
+      icon: MessageSquare,
+      title: "WhatsApp Chatbot & Toll-Free",
+      description: "Multi-language support for service requests via WhatsApp and phone calls",
     },
     {
-      name: "Priya Singh",
-      role: "CMO",
-      image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330",
-      expertise: "Digital Marketing & Business Strategy",
+      icon: Users,
+      title: "Equipment & Labor Booking",
+      description: "Easy booking system for farm equipment and skilled labor",
     },
     {
-      name: "Arun Patel",
-      role: "COO",
-      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
-      expertise: "Operations & Business Development",
-    }
+      icon: Cpu,
+      title: "AI-Powered Advisory",
+      description: "Smart recommendations for optimal farming practices",
+    },
+    {
+      icon: LineChart,
+      title: "Market Price Tracking",
+      description: "Real-time agricultural market price updates",
+    },
+    {
+      icon: Cloud,
+      title: "Weather Integration",
+      description: "Accurate weather forecasts for better planning",
+    },
+    {
+      icon: Globe,
+      title: "Multi-Language Support",
+      description: "Access in various regional languages",
+    },
+    {
+      icon: Zap,
+      title: "Modern Tech Stack",
+      description: "Built with Python, FastAPI, Make.com, and BotPress",
+    },
+    {
+      icon: Phone,
+      title: "24/7 Accessibility",
+      description: "Always available through WhatsApp and toll-free number",
+    },
   ];
 
   return (
@@ -58,44 +81,34 @@ export default function StartupSection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">VR Tourism Startup</h2>
+          <h2 className="text-3xl font-bold mb-4">Farm Service Platform</h2>
           <p className="text-lg text-foreground/80">
-            Revolutionizing the tourism industry through immersive virtual reality
-            experiences, making travel more accessible and engaging.
+            A comprehensive agricultural services platform connecting Indian farmers with essential
+            resources through accessible technology
           </p>
         </motion.div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Our Team</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {coFounders.map((founder, index) => (
-              <motion.div
-                key={founder.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card className="h-full">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-32 h-32 mx-auto mb-4 overflow-hidden rounded-full">
-                      <img
-                        src={founder.image}
-                        alt={founder.name}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h4 className="text-xl font-semibold mb-1">{founder.name}</h4>
-                    <p className="text-primary mb-2">{founder.role}</p>
-                    <p className="text-sm text-foreground/70">{founder.expertise}</p>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {features.map((feature, index) => (
+            <motion.div
+              key={feature.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+            >
+              <Card className="h-full">
+                <CardContent className="p-6 flex flex-col items-center text-center">
+                  <feature.icon className="w-12 h-12 mb-4 text-primary" />
+                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
+                  <p className="text-foreground/80">{feature.description}</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          ))}
         </div>
 
-        <h3 className="text-2xl font-bold text-center mb-8">Milestones</h3>
+        <h3 className="text-2xl font-bold text-center mb-8">Development Milestones</h3>
         <Carousel className="max-w-4xl mx-auto">
           <CarouselContent>
             {milestones.map((milestone, index) => (
