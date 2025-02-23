@@ -31,43 +31,43 @@ export default function StartupSection() {
   const features = [
     {
       icon: MessageSquare,
-      title: "WhatsApp Chatbot & Toll-Free",
-      description: "Multi-language support for service requests via WhatsApp and phone calls",
+      title: "WhatsApp Chatbot",
+      description: "Multi-language support",
     },
     {
       icon: Users,
-      title: "Equipment & Labor Booking",
-      description: "Easy booking system for farm equipment and skilled labor",
+      title: "Equipment Booking",
+      description: "Easy resource access",
     },
     {
       icon: Cpu,
-      title: "AI-Powered Advisory",
-      description: "Smart recommendations for optimal farming practices",
+      title: "AI Advisory",
+      description: "Smart recommendations",
     },
     {
       icon: LineChart,
-      title: "Market Price Tracking",
-      description: "Real-time agricultural market price updates",
+      title: "Market Prices",
+      description: "Real-time updates",
     },
     {
       icon: Cloud,
-      title: "Weather Integration",
-      description: "Accurate weather forecasts for better planning",
+      title: "Weather Updates",
+      description: "Accurate forecasts",
     },
     {
       icon: Globe,
-      title: "Multi-Language Support",
-      description: "Access in various regional languages",
+      title: "Multi-Language",
+      description: "Local accessibility",
     },
     {
       icon: Zap,
-      title: "Modern Tech Stack",
-      description: "Built with Python, FastAPI, Make.com, and BotPress",
+      title: "Modern Stack",
+      description: "Advanced technology",
     },
     {
       icon: Phone,
-      title: "24/7 Accessibility",
-      description: "Always available through WhatsApp and toll-free number",
+      title: "24/7 Support",
+      description: "Always available",
     },
   ];
 
@@ -88,25 +88,42 @@ export default function StartupSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-          {features.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full">
-                <CardContent className="p-6 flex flex-col items-center text-center">
-                  <feature.icon className="w-12 h-12 mb-4 text-primary" />
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-foreground/80">{feature.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="mb-16"
+        >
+          <div className="relative h-[400px] rounded-xl overflow-hidden mb-12">
+            <img
+              src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449"
+              alt="Indian Agriculture"
+              className="w-full h-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {features.map((feature, index) => (
+              <motion.div
+                key={feature.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card className="h-full hover:bg-accent/5 transition-colors">
+                  <CardContent className="p-4 flex flex-col items-center text-center">
+                    <feature.icon className="w-8 h-8 mb-2 text-accent" />
+                    <h3 className="text-sm font-semibold mb-1">{feature.title}</h3>
+                    <p className="text-xs text-foreground/70">{feature.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
 
         <h3 className="text-2xl font-bold text-center mb-8">Development Milestones</h3>
         <Carousel className="max-w-4xl mx-auto">
@@ -121,7 +138,7 @@ export default function StartupSection() {
                 >
                   <Card>
                     <CardContent className="p-6 text-center">
-                      <span className="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-semibold mb-4">
+                      <span className="inline-block bg-accent text-accent-foreground rounded-full px-3 py-1 text-sm font-semibold mb-4">
                         {milestone.year}
                       </span>
                       <h3 className="text-xl font-semibold mb-2">

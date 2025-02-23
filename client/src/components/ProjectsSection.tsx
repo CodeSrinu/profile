@@ -48,16 +48,17 @@ export default function ProjectsSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.02 }}
             >
               <Dialog>
                 <DialogTrigger asChild>
-                  <Card className="cursor-pointer hover:shadow-lg transition-shadow overflow-hidden">
+                  <Card className="cursor-pointer overflow-hidden transform transition-all duration-300 hover:shadow-xl hover:bg-accent/5">
                     <CardContent className="p-0">
                       <div className="aspect-video overflow-hidden">
                         <img
                           src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-cover transition-transform hover:scale-105"
+                          className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                         />
                       </div>
                       <div className="p-6">

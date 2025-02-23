@@ -36,10 +36,11 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
               viewport={{ once: true }}
+              whileHover={{ scale: 1.05 }}
             >
-              <Card className="h-full">
+              <Card className="h-full transform transition-all duration-300 hover:shadow-lg hover:bg-accent/5">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <skill.icon className="w-12 h-12 mb-4 text-primary" />
+                  <skill.icon className="w-12 h-12 mb-4 text-accent" />
                   <h3 className="text-xl font-semibold mb-2">{skill.label}</h3>
                 </CardContent>
               </Card>
