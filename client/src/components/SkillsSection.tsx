@@ -10,16 +10,26 @@ import {
 
 export default function SkillsSection() {
   const programmingSkills = [
-    { name: "Python", level: 90 },
-    { name: "C", level: 85 },
-    { name: "HTML", level: 95 },
-    { name: "CSS", level: 85 },
-    { name: "Bootstrap", level: 90 },
+    { name: "Python", level: 95 },
+    { name: "C", level: 91 },
+    { name: "HTML", level: 92 },
+    { name: "CSS", level: 92 },
+    { name: "JavaScript", level: 80 },
+    { name: "C#", level: 40 },
   ];
 
   const softwareSkills = [
     { name: "Premiere Pro", level: 80 },
-    { name: "Photopea", level: 85 },
+    { name: "VS Code", level: 85 },
+    { name: "Visual Studio", level: 75 },
+    { name: "Unity", level: 60 },
+  ];
+
+  const frameworkSkills = [
+    { name: "Node.js", level: 75 },
+    { name: "Flask", level: 85 },
+    { name: "Bootstrap", level: 90 },
+    { name: "MongoDB", level: 70 },
   ];
 
   return (
@@ -105,6 +115,38 @@ export default function SkillsSection() {
             </div>
           </motion.div>
         </div>
+        <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-xl font-semibold mb-6">Framework Skills</h3>
+            <div className="space-y-6">
+              {frameworkSkills.map((skill) => (
+                <TooltipProvider key={skill.name}>
+                  <Tooltip>
+                    <TooltipTrigger className="w-full">
+                      <Card>
+                        <CardContent className="py-4">
+                          <div className="flex justify-between items-center mb-2">
+                            <span className="font-medium">{skill.name}</span>
+                            <span className="text-sm text-foreground/60">
+                              {skill.level}%
+                            </span>
+                          </div>
+                          <Progress value={skill.level} className="h-2" />
+                        </CardContent>
+                      </Card>
+                    </TooltipTrigger>
+                    <TooltipContent>
+                      <p>Proficiency: {skill.level}%</p>
+                    </TooltipContent>
+                  </Tooltip>
+                </TooltipProvider>
+              ))}
+            </div>
+          </motion.div>
       </div>
     </section>
   );

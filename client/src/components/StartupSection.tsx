@@ -27,19 +27,29 @@ export default function StartupSection() {
 
   const milestones = [
     {
-      year: "2024",
-      title: "Platform Launch",
-      description: "Successfully launched the Farm Service Platform with WhatsApp integration",
+      year: "Feb 2025",
+      title: "WhatsApp Bot Development",
+      description: "Successfully developed and deployed WhatsApp bot for service booking",
     },
     {
-      year: "2024",
-      title: "Regional Expansion",
-      description: "Extended services to multiple states with local language support",
+      year: "Mar 2025",
+      title: "Service Infrastructure",
+      description: "Mobile app development initiated and toll-free service booking number established",
     },
     {
-      year: "2024",
-      title: "Tech Integration",
-      description: "Implemented AI-powered crop advisory and weather forecasting",
+      year: "Apr 2025",
+      title: "Service Expansion",
+      description: "Expanding agricultural service offerings and coverage areas",
+    },
+    {
+      year: "May 2025",
+      title: "Mobile App Launch",
+      description: "Planned release of comprehensive mobile application",
+    },
+    {
+      year: "Jun 2025",
+      title: "Smart Integration",
+      description: "Integration of real-time tracking and automation features",
     },
   ];
 
