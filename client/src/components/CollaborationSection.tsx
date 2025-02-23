@@ -1,24 +1,45 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { 
+  Headset, 
+  Gamepad, 
+  Palette, 
+  PenTool,
+  Lightbulb,
+  Binary
+} from "lucide-react";
 
 export default function CollaborationSection() {
-  const vrTourismFeatures = [
+  const collaborationAreas = [
     {
-      title: "Immersive VR Experience",
-      description: "Revolutionary virtual reality technology for realistic tourism experiences",
+      icon: Headset,
+      title: "VR Development",
+      description: "Expertise in virtual reality technologies and immersive experiences",
     },
     {
-      title: "Global Destinations",
-      description: "Access to worldwide tourist spots from the comfort of home",
+      icon: Gamepad,
+      title: "Gaming",
+      description: "Game development and interactive experience design",
     },
     {
-      title: "Interactive Tours",
-      description: "Engaging virtual guided tours with rich cultural information",
+      icon: PenTool,
+      title: "3D Modeling",
+      description: "Creating detailed 3D models and environments",
     },
     {
-      title: "Multi-Platform Support",
-      description: "Compatible with various VR devices and platforms",
+      icon: Palette,
+      title: "UI/UX Design",
+      description: "User interface and experience design for VR applications",
+    },
+    {
+      icon: Binary,
+      title: "ECE Subjects",
+      description: "Electronics and communication engineering expertise",
+    },
+    {
+      icon: Lightbulb,
+      title: "VR Education",
+      description: "Innovative ideas in educational VR applications",
     },
   ];
 
@@ -34,52 +55,34 @@ export default function CollaborationSection() {
         >
           <h2 className="text-3xl font-bold mb-4">Collaboration Opportunity</h2>
           <p className="text-lg text-foreground/80 mb-6">
-            Join me in developing an innovative VR-based tourism platform
+            Looking for passionate individuals in the following areas
           </p>
-          <Button
-            size="lg"
-            className="bg-primary hover:bg-primary/90"
-            asChild
-          >
-            <a href="#contact">Let's Collaborate</a>
-          </Button>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-          className="mb-12"
-        >
-          <Card>
-            <CardContent className="p-6">
-              <p className="text-foreground/80">
-                A revolutionary VR-based tourism platform that makes travel experiences accessible
-                and immersive. Using cutting-edge virtual reality technology, we aim to transform
-                how people explore and experience destinations worldwide.
-              </p>
-            </CardContent>
-          </Card>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-          {vrTourismFeatures.map((feature, index) => (
-            <motion.div
-              key={feature.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              <Card className="h-full">
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2">{feature.title}</h3>
-                  <p className="text-foreground/80">{feature.description}</p>
-                </CardContent>
-              </Card>
-            </motion.div>
-          ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="space-y-4">
+            {collaborationAreas.map((area, index) => (
+              <motion.div
+                key={area.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+              >
+                <Card>
+                  <CardContent className="p-4">
+                    <div className="flex items-center gap-4">
+                      <area.icon className="w-8 h-8 text-primary" />
+                      <div>
+                        <h3 className="text-lg font-semibold">{area.title}</h3>
+                        <p className="text-foreground/70">{area.description}</p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </section>
