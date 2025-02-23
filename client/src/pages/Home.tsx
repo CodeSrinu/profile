@@ -6,6 +6,7 @@ import SkillsSection from "@/components/SkillsSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import CertificationsSection from "@/components/CertificationsSection";
 import EntrepreneurialSection from "@/components/EntrepreneurialSection";
+import CollaborationSection from "@/components/CollaborationSection";
 import ContactSection from "@/components/ContactSection";
 
 export default function Home() {
@@ -14,11 +15,11 @@ export default function Home() {
       <HeroSection />
       <AboutSection />
       <StartupSection />
-      <CoFoundersSection />
       <SkillsSection />
       <ProjectsSection />
       <CertificationsSection />
       <EntrepreneurialSection />
+      <CollaborationSection />
       <ContactSection />
     </main>
   );
