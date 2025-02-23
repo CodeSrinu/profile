@@ -115,7 +115,7 @@ export default function StartupSection() {
               >
                 <Card className="h-full hover:bg-accent/5 transition-colors">
                   <CardContent className="p-4 flex flex-col items-center text-center">
-                    <feature.icon className="w-8 h-8 mb-2 text-accent" />
+                    <feature.icon className="w-8 h-8 mb-2 text-primary opacity-90 dark:text-accent/90" />
                     <h3 className="text-sm font-semibold mb-1">{feature.title}</h3>
                     <p className="text-xs text-foreground/70">{feature.description}</p>
                   </CardContent>
