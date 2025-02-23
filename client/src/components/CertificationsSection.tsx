@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Card, CardContent } from "@/components/ui/card";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { SiAws, SiGoogle, SiMaterialdesignicons } from "react-icons/si";
+import { Award, Cloud, Terminal, Palette } from "lucide-react";
 
 export default function CertificationsSection() {
   const certifications = [
@@ -10,28 +10,28 @@ export default function CertificationsSection() {
       title: "Advanced Web Development",
       issuer: "NxtWave",
       description: "Full-stack web development with modern technologies",
-      logo: SiMaterialdesignicons,
+      Icon: Terminal,
     },
     {
       year: "2023",
       title: "AWS Cloud Practitioner",
       issuer: "Amazon Web Services",
       description: "Cloud computing fundamentals and AWS services",
-      logo: SiAws,
+      Icon: Cloud,
     },
     {
       year: "2023",
       title: "AI & Machine Learning",
       issuer: "NxtWave",
       description: "Comprehensive AI and ML concepts and applications",
-      logo: SiMaterialdesignicons,
+      Icon: Award,
     },
     {
       year: "2022",
       title: "Digital Marketing",
       issuer: "Google",
       description: "Digital marketing strategies and analytics",
-      logo: SiGoogle,
+      Icon: Palette,
     },
   ];
 
@@ -70,7 +70,7 @@ export default function CertificationsSection() {
                       <span className="inline-block bg-primary/10 text-primary rounded-full px-3 py-1 text-sm font-semibold">
                         {cert.year}
                       </span>
-                      <cert.logo className="w-6 h-6 text-primary dark:text-accent" />
+                      <cert.Icon className="w-6 h-6 text-primary dark:text-accent" />
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{cert.title}</h3>
                     <p className="text-foreground/60 text-sm mb-2">
