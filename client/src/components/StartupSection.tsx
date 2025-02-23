@@ -10,6 +10,21 @@ import {
 import { MessageSquare, Phone, Cloud, Users, LineChart, Zap, Globe, Cpu } from "lucide-react";
 
 export default function StartupSection() {
+  const founders = [
+    {
+      name: "Kadiyam Srinivasu",
+      role: "Co-Founder & CEO",
+      image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d",
+      description: "Tech enthusiast with a vision for agricultural innovation",
+    },
+    {
+      name: "Danayya",
+      role: "Co-Founder & CTO",
+      image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e",
+      description: "Expert in agricultural technology and system architecture",
+    },
+  ];
+
   const milestones = [
     {
       year: "2024",
@@ -72,7 +87,7 @@ export default function StartupSection() {
   ];
 
   return (
-    <section id="startup" className="py-20 bg-accent/5">
+    <section id="startup" className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -81,13 +96,10 @@ export default function StartupSection() {
           viewport={{ once: true }}
           className="max-w-3xl mx-auto text-center mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">Farm Service Platform</h2>
-          <p className="text-lg text-foreground/80">
-            A comprehensive agricultural services platform connecting Indian farmers with essential
-            resources through accessible technology
-          </p>
+          <h2 className="text-3xl font-bold mb-4">My Startup</h2>
         </motion.div>
 
+        {/* Farm Service Platform Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -95,6 +107,42 @@ export default function StartupSection() {
           viewport={{ once: true }}
           className="mb-16"
         >
+          <h3 className="text-2xl font-bold text-center mb-8">Farm Service Platform</h3>
+          <p className="text-lg text-foreground/80 text-center mb-12 max-w-3xl mx-auto">
+            A comprehensive agricultural services platform connecting Indian farmers with essential
+            resources through accessible technology
+          </p>
+
+          {/* Founders Section */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+            {founders.map((founder, index) => (
+              <motion.div
+                key={founder.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <Card className="h-full hover:bg-accent/5 transition-all duration-300">
+                  <CardContent className="p-6">
+                    <div className="aspect-square mb-4 overflow-hidden rounded-full">
+                      <img
+                        src={founder.image}
+                        alt={founder.name}
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <h4 className="text-xl font-semibold mb-1">{founder.name}</h4>
+                    <p className="text-accent mb-2">{founder.role}</p>
+                    <p className="text-foreground/80">{founder.description}</p>
+                  </CardContent>
+                </Card>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Platform Image */}
           <div className="relative h-[400px] rounded-xl overflow-hidden mb-12">
             <img
               src="https://images.unsplash.com/photo-1625246333195-78d9c38ad449"
@@ -104,6 +152,7 @@ export default function StartupSection() {
             <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent" />
           </div>
 
+          {/* Features Grid */}
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {features.map((feature, index) => (
               <motion.div
@@ -115,7 +164,7 @@ export default function StartupSection() {
               >
                 <Card className="h-full hover:bg-accent/5 transition-colors">
                   <CardContent className="p-4 flex flex-col items-center text-center">
-                    <feature.icon className="w-8 h-8 mb-2 text-primary opacity-90 dark:text-accent/90" />
+                    <feature.icon className="w-8 h-8 mb-2 text-primary/90 dark:text-accent/90" />
                     <h3 className="text-sm font-semibold mb-1">{feature.title}</h3>
                     <p className="text-xs text-foreground/70">{feature.description}</p>
                   </CardContent>
@@ -125,6 +174,7 @@ export default function StartupSection() {
           </div>
         </motion.div>
 
+        {/* Milestones Section */}
         <h3 className="text-2xl font-bold text-center mb-8">Development Milestones</h3>
         <Carousel className="max-w-4xl mx-auto">
           <CarouselContent>
@@ -138,7 +188,7 @@ export default function StartupSection() {
                 >
                   <Card>
                     <CardContent className="p-6 text-center">
-                      <span className="inline-block bg-accent text-accent-foreground rounded-full px-3 py-1 text-sm font-semibold mb-4">
+                      <span className="inline-block bg-secondary text-foreground rounded-full px-3 py-1 text-sm font-semibold mb-4">
                         {milestone.year}
                       </span>
                       <h3 className="text-xl font-semibold mb-2">

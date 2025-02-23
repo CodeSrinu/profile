@@ -1,19 +1,23 @@
 {
   "variant": "vibrant",
-  "primary": "hsl(200, 100%, 45%)",
+  "primary": "hsl(213, 40%, 18%)",
   "appearance": "system",
   "radius": 0.5,
   "colors": {
     "light": {
-      "background": "#FFFFFF",
-      "foreground": "#222222",
+      "background": "#F8F9FA",
+      "foreground": "#212529",
+      "primary": "#0D1B2A",
       "accent": "#00A8E8",
-      "subtle": "#F5F5F5"
+      "secondary": "#F8C537",
+      "subtle": "#E9ECEF"
     },
     "dark": {
       "background": "#121212",
       "foreground": "#E0E0E0",
+      "primary": "#1B263B",
       "accent": "#00A8E8",
+      "secondary": "#F8C537",
       "subtle": "#2A2A2A"
     }
   }
