@@ -114,7 +114,7 @@ export default function StartupSection() {
           </p>
 
           {/* Founders Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto mb-16">
+          <div className="grid grid-cols-2 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-12">
             {founders.map((founder, index) => (
               <motion.div
                 key={founder.name}
@@ -125,17 +125,19 @@ export default function StartupSection() {
                 whileHover={{ scale: 1.02 }}
               >
                 <Card className="h-full hover:bg-accent/5 transition-all duration-300">
-                  <CardContent className="p-6">
-                    <div className="aspect-square mb-4 overflow-hidden rounded-full">
+                  <CardContent className="p-4 flex items-center space-x-4">
+                    <div className="w-16 h-16 overflow-hidden rounded-full flex-shrink-0">
                       <img
                         src={founder.image}
                         alt={founder.name}
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <h4 className="text-xl font-semibold mb-1">{founder.name}</h4>
-                    <p className="text-accent mb-2">{founder.role}</p>
-                    <p className="text-foreground/80">{founder.description}</p>
+                    <div>
+                      <h4 className="text-lg font-semibold">{founder.name}</h4>
+                      <p className="text-sm text-accent mb-1">{founder.role}</p>
+                      <p className="text-sm text-foreground/70">{founder.description}</p>
+                    </div>
                   </CardContent>
                 </Card>
               </motion.div>

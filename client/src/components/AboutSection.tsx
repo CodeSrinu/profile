@@ -11,7 +11,7 @@ export default function AboutSection() {
   ];
 
   return (
-    <section id="about" className="py-20 bg-background">
+    <section id="about" className="py-20 bg-subtle">
       <div className="container mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -38,9 +38,9 @@ export default function AboutSection() {
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
             >
-              <Card className="h-full transform transition-all duration-300 hover:shadow-lg hover:bg-accent/5">
+              <Card className="h-full transform transition-all duration-300 hover:shadow-lg hover:bg-background">
                 <CardContent className="p-6 flex flex-col items-center text-center">
-                  <skill.icon className="w-12 h-12 mb-4 text-accent" />
+                  <skill.icon className="w-12 h-12 mb-4 text-primary dark:text-accent" />
                   <h3 className="text-xl font-semibold mb-2">{skill.label}</h3>
                 </CardContent>
               </Card>
