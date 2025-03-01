@@ -25,44 +25,7 @@ export default function StartupSection() {
     },
   ];
 
-  const milestones = [
-    {
-      icon: "✅",
-      year: "Feb 2025",
-      title: "WhatsApp Bot Development",
-      description: "Successfully developed and deployed WhatsApp bot for service booking",
-    },
-    {
-      icon: "🔨",
-      year: "Mar 2025",
-      title: "Mobile App Development",
-      description: "Mobile app development initiated",
-    },
-    {
-      icon: "☎️",
-      year: "Mar 2025",
-      title: "Toll-free Service",
-      description: "Toll-free number setup for service booking",
-    },
-    {
-      icon: "🌱",
-      year: "Apr 2025",
-      title: "Service Expansion",
-      description: "Expanding agricultural service offerings",
-    },
-    {
-      icon: "📱",
-      year: "May 2025",
-      title: "Mobile App Launch",
-      description: "Planned release of mobile application",
-    },
-    {
-      icon: "🔗",
-      year: "Jun 2025",
-      title: "Smart Integration",
-      description: "Integration of real-time tracking & automation",
-    },
-  ];
+  
 
   const features = [
     {
@@ -183,37 +146,6 @@ export default function StartupSection() {
               </Card>
             </motion.div>
           ))}
-        </div>
-
-        {/* Milestones Section */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8">Development Milestones</h3>
-          <div className="max-w-3xl mx-auto space-y-4">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={milestone.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                viewport={{ once: true }}
-              >
-                <Card>
-                  <CardContent className="p-4">
-                    <div className="flex items-center gap-4">
-                      <span className="text-2xl">{milestone.icon}</span>
-                      <div>
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-foreground/60">{milestone.year}</span>
-                          <h4 className="text-lg font-semibold">{milestone.title}</h4>
-                        </div>
-                        <p className="text-foreground/70">{milestone.description}</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </div>
     </section>
